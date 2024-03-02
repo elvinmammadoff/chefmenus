@@ -1,0 +1,191 @@
+/*-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+    1. - CUSTOMIZE THE CAROUSEL
+
+    2. - RESPONSIVE
+
+-----------------------------------------------------------------------------------*/
+
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.min-height-screen {
+    min-height: 100vh;
+}
+
+
+/* 1. - CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    width: 100%;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    padding: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+.carousel-item {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Carousel custom class */
+.carousel-caption > .row {
+    width: 100%;
+}
+.carousel-item-next .carousel-desc-ttl,
+.carousel-item-prev .carousel-desc-ttl {
+    opacity: 0;
+}
+.carousel-item-next .carousel-desc-txt,
+.carousel-item-prev .carousel-desc-txt {
+    opacity: 0;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: #fff;
+    border-bottom: 1px dashed rgba(49, 51, 79, 0.4);
+    border-top: none;
+    width: 100%;
+    height: auto;
+    text-indent: 0;
+    opacity: 1;
+    margin: 0;
+    padding: 1rem .4rem;
+}
+.carousel-indicators [data-bs-target]:first-child {
+    border-top: 1px dashed rgba(49, 51, 79, 0.4);
+}
+.carousel-indicators {
+    margin: 0 2rem;
+    position: relative;
+    display: block;
+}
+.carousel-indicators button {
+    position: relative;
+}
+.carousel-indicators button:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .3s all ease-in;
+}
+.carousel-indicators button.active:before {
+    background-color: #31334f;
+    animation: fill 5s ease-in;
+}
+.carousel-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: #dcdac1;
+}
+.carousel-img {
+    width: 100%;
+}
+.carousel-desc {
+    text-align: left;
+    z-index: 1;
+    position: relative;
+}
+.carousel-desc-ttl {
+    font-size: 1.25rem;
+    line-height: normal;
+    margin-bottom: .2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #ad974f;
+}
+.carousel-desc-txt {
+    font-size: .875rem;
+    line-height: normal;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0;
+    color: #9C9288;
+}
+.carousel-desc-ttl,
+.carousel-desc-txt {
+    opacity: 1;
+}
+
+@keyframes fill{
+    0%{
+      width: 0%;
+    }
+  
+    100%{
+      width: 100%;
+    }
+  }
+
+/* 2. - RESPONSIVE
+-------------------------------------------------- */
+
+@media only screen and (max-width: 1160px) {
+    .carousel-caption {
+        left: 10%;
+        right: 10%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .carousel-desc-ttl {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .carousel-caption {
+        left: 0;
+        right: 0;
+        padding: 0 1rem;
+    }
+    .carousel-caption > .row {
+        flex-direction: column-reverse;
+    }
+    .carousel-content {
+        padding: 1rem 10%;
+        max-width: 90%;
+    }
+    .carousel-desc-ttl {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        margin-bottom: 1.6rem;
+    }
+    .carousel-desc-txt {
+        font-size: 1.5rem;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-content {
+        max-width: 100%;
+    }
+}
