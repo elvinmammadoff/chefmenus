@@ -83,10 +83,10 @@ body {
     display: block;
     overflow: clip;
 }
-.carousel-indicators button {
+.carousel-indicators div {
     position: relative;
 }
-.carousel-indicators button:before {
+.carousel-indicators div:before {
     content: "";
     width: 0%;
     height: 100%;
@@ -95,7 +95,7 @@ body {
     left: 0;
     transition: .3s all ease-in;
 }
-.carousel-indicators button.active:before {
+.carousel-indicators div.active:before {
     background-color: #31334f;
     animation: fill 5s ease-in;
 }
