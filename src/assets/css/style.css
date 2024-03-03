@@ -184,7 +184,7 @@ body {
 /* 2. - RESPONSIVE
 -------------------------------------------------- */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991.98px) {
     .carousel-indicators {
         margin: 1rem 0 0;
     }
